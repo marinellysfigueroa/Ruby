@@ -1,0 +1,19 @@
+<h1>Listado de Art&iacute;culo</h1>
+<table>
+  <tr>
+    <th>T&iacute;tulo</th>
+    <th>Texto</th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Mostrar', article_path(article) %></td>
+      <td><%= link_to 'Editar', edit_article_path(article) %></td>
+      <td><%= link_to 'Eliminar', article_path(article),
+                    method: :delete, data: { confirm: 'Seguro que deseea eliminar el registro?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Nuevo Artículo', new_article_path %>

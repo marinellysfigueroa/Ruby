@@ -1,9 +1,11 @@
 <p>
-  <strong>Title:</strong>
+  <strong>Titulo:</strong>
   <%= @article.title %>
 </p>
  
 <p>
-  <strong>Text:</strong>
+  <strong>Descripción:</strong>
   <%= @article.text %>
 </p>
+<%= link_to 'Atrás', articles_path %>
+| <%= link_to 'Editar', edit_article_path(@article) %>
